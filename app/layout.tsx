@@ -1,43 +1,77 @@
 import '#/styles/globals.css';
-import { AddressBar } from '#/ui/address-bar';
-import Byline from '#/ui/byline';
-import { GlobalNav } from '#/ui/global-nav';
 import { Metadata } from 'next';
 
+import GlobalStyle from './../styles/GlobalStyle';
+import Navbar from './../ui/Components/Navbar/Navbar';
+import PopUpButton from './../ui/Components/PopUpButton/PopUpButton';
+import StyledComponentsRegistry from './styling/styled-components/registry';
+
 export const metadata: Metadata = {
-  title: {
-    default: 'Next.js App Router',
-    template: '%s | Next.js App Router',
-  },
-  description:
-    'A playground to explore new Next.js App Router features such as nested layouts, instant loading states, streaming, and component level data fetching.',
+    title: {
+        default: 'AGÊNCIA UP.EXPERT',
+
+        template: 'MARKETIGN DIGITAL EM BRASILIA | (61) 9 8669-2775',
+    },
+
+    description:
+        'Agência de Marketing Digital em Brasília-DF e Goiânia, honesta e eficiente. Confie em quem mais entende de resultados no digital, fale com a UP.EXPERT.',
+
+    keywords:
+        'Agência de Marketing, Agências em Brasília, Agência de Marketing em Brasília, Marketing em Brasília, Marketing Digital, Marketing Digital em Brasília, agência de marketing em Goiânia, agencia de marketing Brasília, resultado em marketing',
+
+    authors: [
+        {
+            name: 'AGÊNCIA FULL SERVICE | UP.EXPERT',
+
+            url: 'https://upexpert.com.br',
+        },
+    ],
+
+    openGraph: {
+        url: 'https://upexpert.com.br',
+
+        title: 'AGÊNCIA FULL SERVICE | UP.EXPERT',
+
+        description:
+            'Muito mais que uma agência digital, uma parceria de projetos incríveis. Seu projeto deve ir além da comunicação e se destacar proporcionando experiências e reações positivas de seus clientes.',
+
+        images: [
+            {
+                url: '/cover.png',
+
+                alt: 'AGÊNCIA FULL SERVICE | UP.EXPERT',
+            },
+        ],
+    },
+
+    icons: [
+        {
+            url: '/public/favicon/favicon-32x32.png',
+
+            sizes: '32x32',
+
+            type: 'image/png',
+        },
+    ],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en" className="[color-scheme:dark]">
-      <body className="bg-gray-1100 overflow-y-scroll bg-[url('/grid.svg')] pb-36">
-        <GlobalNav />
-
-        <div className="lg:pl-72">
-          <div className="mx-auto max-w-4xl space-y-8 px-2 pt-20 lg:py-8 lg:px-8">
-            <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">
-              <div className="rounded-lg bg-black">
-                <AddressBar />
-              </div>
-            </div>
-
-            <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">
-              <div className="rounded-lg bg-black p-3.5 lg:p-6">{children}</div>
-            </div>
-            <Byline className="fixed sm:hidden" />
-          </div>
-        </div>
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+    return (
+        <html lang="PT-BR" className="[color-scheme:dark]">
+            <body className="bg-slate-900 pb-36">
+                <div className="bg-gray-5 justify-center overflow-hidden">
+                    <Navbar />
+                </div>
+                <div className="">
+                    <div className="bg-vc-border-gradient p-px shadow-lg shadow-black/20">
+                        <div className=" bg-black/30 p-3.5 backdrop-blur-sm lg:p-6">
+                            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+                            <GlobalStyle />
+                        </div>
+                    </div>
+                    <PopUpButton handleScroll={undefined} />
+                </div>
+            </body>
+        </html>
+    );
 }
