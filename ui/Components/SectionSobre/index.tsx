@@ -21,7 +21,7 @@ export function SectionSobre() {
                                 <Image src={Bg} alt="codeBucka" className="h-auto" />
                             </div>
                             <div className="gap z-0 grid grid-flow-col flex-col items-center self-center p-32 !pt-0 sm:grid-cols-1 sm:p-8 sm:!pt-16 md:p-12 md:!pt-16 lg:w-full lg:p-16 lg:pt-2 lg:text-center">
-                                <AnimatedText text="SOBRE NÓS" className="!text-left !text-6xl" />
+                                <AnimatedText text="SOBRE NÓS" />
                                 <p className="my-4 text-base font-medium">
                                     Somos uma Agência de Marketing Digital Full Service com uma
                                     combinação única de talentos criados para a era digital. Geramos

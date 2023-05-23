@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { HiOutlineMagnifyingGlass, HiShoppingBag } from 'react-icons/hi2';
 
-import { SearchIcon, ShoppingCartIcon } from '@heroicons/react/solid';
 import { NextLogo } from '#/ui/next-logo';
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -20,7 +20,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                                 </Link>
                                 <div className="relative flex-1">
                                     <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                                        <SearchIcon className="h-5 w-5 text-gray-300" />
+                                        <HiOutlineMagnifyingGlass className="h-5 w-5 text-gray-300" />
                                     </div>
                                     <input
                                         aria-label="Search"
@@ -35,7 +35,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
                             <div className="flex shrink-0 space-x-3">
                                 <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-600 text-white">
-                                    <ShoppingCartIcon className="w-6 text-white" />
+                                    <HiShoppingBag className="w-6 text-white" />
                                     <div className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-vercel-pink text-sm font-bold text-white">
                                         0
                                     </div>

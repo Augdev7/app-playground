@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from '@heroicons/react/outline';
+import { BsBoxArrowRight } from 'react-icons/bs';
 
 export const ExternalLink = ({ children, href }: { children: React.ReactNode; href: string }) => {
     return (
@@ -8,7 +8,7 @@ export const ExternalLink = ({ children, href }: { children: React.ReactNode; hr
         >
             <div>{children}</div>
 
-            <ArrowRightIcon className="block w-4" />
+            <BsBoxArrowRight className="block w-4" />
         </a>
     );
 };

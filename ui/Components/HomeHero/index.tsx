@@ -26,8 +26,8 @@ import { HiCalendarDays } from 'react-icons/hi2';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import ImgHome from '/public/image-layers-3-01.png';
-import { Slide } from '/ui/Components/Slide/index';
-import { HeroBottomCard } from '/ui/Components/HeroBottomCard/index';
+import { Slide } from '../Slide/index';
+import { HeroBottomCard } from '../HeroBottomCard/index';
 export function HomeHero() {
     const [selected, setSelected] = useState(people[0]);
     const [enabled, setEnabled] = useState(false);
