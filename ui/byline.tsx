@@ -1,4 +1,4 @@
-import { Link } from 'next/link';
+import Link from 'next/link';
 
 import { VercelLogo } from '#/ui/vercel-logo';
 

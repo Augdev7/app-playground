@@ -1,6 +1,5 @@
 /* eslint-disable import-helpers/order-imports */
 'use client';
-/* eslint-disable react/jsx-key */
 import AOS from 'aos';
 
 import 'aos/dist/aos.css';

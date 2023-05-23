@@ -13,7 +13,6 @@ export function Solution() {
             label: 'Dashboard',
             value: 'dashboard',
             icon: Square3Stack3DIcon,
-            img: 'Img',
             desc: `It really matters and then like it really doesn't matter.
   What matters is the people who are sparked by it. And the people 
   who are like offended by it, it doesn't matter.`,
@@ -58,10 +57,9 @@ export function Solution() {
                                     ))}
                                 </TabsHeader>
                                 <TabsBody>
-                                    {data.map(({ value, desc, Img }) => (
+                                    {data.map(({ value, desc }) => (
                                         <TabPanel key={value} value={value} className="py-0">
                                             {desc}
-                                            <Image src={Img} alt="/" width={400} height={565} />
                                         </TabPanel>
                                     ))}
                                 </TabsBody>

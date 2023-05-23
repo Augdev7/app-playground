@@ -5,8 +5,6 @@ import hoverImg from '/public/assets/hoverImg.jpg';
 import hoverImg2 from '/public/assets/hoverImg2.jpg';
 import hoverImg3 from '/public/assets/hoverImg3.jpg';
 
-import { AnimatedText } from './AnimatedText/index';
-
 export function Experiencia() {
     return (
         <>
@@ -78,7 +76,7 @@ export function Experiencia() {
                     </div>
                 </div>
                 <div className="fixed bottom-[58%]">
-                    <AnimatedText text="JOBS" className="!text-left !text-6xl sm:text-6xl" />
+                    <h1>Job</h1>
                 </div>
             </div>
         </>

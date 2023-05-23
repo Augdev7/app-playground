@@ -197,27 +197,6 @@ export default {
                 square: '1 / 1',
                 video: '16 / 9',
             },
-            backdropBlur: ({ theme }) => theme('blur'),
-            backdropBrightness: ({ theme }) => theme('brightness'),
-            backdropContrast: ({ theme }) => theme('contrast'),
-            backdropGrayscale: ({ theme }) => theme('grayscale'),
-            backdropHueRotate: ({ theme }) => theme('hueRotate'),
-            backdropInvert: ({ theme }) => theme('invert'),
-            backdropOpacity: ({ theme }) => theme('opacity'),
-            backdropSaturate: ({ theme }) => theme('saturate'),
-            backdropSepia: ({ theme }) => theme('sepia'),
-            backgroundColor: ({ theme }) => theme('colors'),
-            backgroundImage: {
-                none: 'none',
-                'gradient-to-t': 'linear-gradient(to top, var(--tw-gradient-stops))',
-                'gradient-to-tr': 'linear-gradient(to top right, var(--tw-gradient-stops))',
-                'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',
-                'gradient-to-br': 'linear-gradient(to bottom right, var(--tw-gradient-stops))',
-                'gradient-to-b': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
-                'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
-                'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
-                'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
-            },
             backgroundOpacity: ({ theme }) => theme('opacity'),
             backgroundPosition: {
                 bottom: 'bottom',
@@ -603,34 +582,6 @@ export default {
                 '3/4': '75%',
                 full: '100%',
             }),
-            keyframes: {
-                spin: {
-                    to: {
-                        transform: 'rotate(360deg)',
-                    },
-                },
-                ping: {
-                    '75%, 100%': {
-                        transform: 'scale(2)',
-                        opacity: '0',
-                    },
-                },
-                pulse: {
-                    '50%': {
-                        opacity: '.5',
-                    },
-                },
-                bounce: {
-                    '0%, 100%': {
-                        transform: 'translateY(-25%)',
-                        animationTimingFunction: 'cubic-bezier(0.8,0,1,1)',
-                    },
-                    '50%': {
-                        transform: 'none',
-                        animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
-                    },
-                },
-            },
             letterSpacing: {
                 tighter: '-0.05em',
                 tight: '-0.025em',
@@ -983,24 +934,6 @@ export default {
                 50: '50',
             },
         },
-        variantOrder: [
-            'first',
-            'last',
-            'odd',
-            'even',
-            'visited',
-            'checked',
-            'empty',
-            'read-only',
-            'group-hover',
-            'group-focus',
-            'focus-within',
-            'hover',
-            'focus',
-            'focus-visible',
-            'active',
-            'disabled',
-        ],
         variantOrder: [
             'first',
             'last',

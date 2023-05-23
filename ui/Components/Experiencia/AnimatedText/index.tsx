@@ -32,13 +32,13 @@ const singelword = {
 
 import { Container } from './styles';
 
-export function AnimatedText({ text, className = '' }) {
+export function AnimatedText({ text }: { text: string }) {
     return (
         <Container>
             <div className="mx-auto flex w-full items-center justify-center overflow-hidden text-center lg:py-2">
                 <motion.h3
                     className={
-                        '${}className} inline-block w-full text-8xl font-bold capitalize text-white'
+                        '${}className} inline-block w-full text-8xl font-bold capitalize text-dark'
                     }
                     variants={quote}
                     initial="initial"
