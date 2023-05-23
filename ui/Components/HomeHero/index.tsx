@@ -23,12 +23,11 @@ const people = [
 
 import { HiPencilAlt } from 'react-icons/hi';
 import { HiCalendarDays } from 'react-icons/hi2';
-import { HeroBottomCard } from '/ui/Components/HeroBottomCard/page';
 import Typewriter from 'typewriter-effect';
-import { Slide } from '/ui/Components/Slide/index';
-import ComputersCanvas from '/ui/Components/canvas/Computers';
 import { motion } from 'framer-motion';
 import ImgHome from '/public/image-layers-3-01.png';
+import { Slide } from '/ui/Components/Slide/index';
+import { HeroBottomCard } from '/ui/Components/HeroBottomCard/index';
 export function HomeHero() {
     const [selected, setSelected] = useState(people[0]);
     const [enabled, setEnabled] = useState(false);
