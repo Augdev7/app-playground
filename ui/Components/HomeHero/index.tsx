@@ -25,25 +25,16 @@ import { HiPencilAlt } from 'react-icons/hi';
 import { HiCalendarDays } from 'react-icons/hi2';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
-import ImgHome from '/public/image-layers-3-01.png';
+import ImgHome from '/public/individuo-feliz.png';
 import { Slide } from '../Slide/index';
 import { HeroBottomCard } from '../HeroBottomCard/index';
 export function HomeHero() {
+    const [loading, setLoading] = useState(true);
     const [selected, setSelected] = useState(people[0]);
     const [enabled, setEnabled] = useState(false);
     return (
         <>
-            <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
-                <Image
-                    src={profilePic}
-                    alt=""
-                    className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
-                    fill
-                    sizes="100vw"
-                    style={{
-                        objectFit: 'cover',
-                    }}
-                />
+            <div className="relative isolate overflow-hidden py-16 sm:py-24 lg:py-32 bg-amber-500">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
                         <div
@@ -69,14 +60,14 @@ export function HomeHero() {
                             <Image
                                 src={ImgHome}
                                 alt="Image home"
-                                placeholder="blur"
-                                width={475}
-                                height={547}
-                                sizes="100vw"
-                                style={{
-                                    width: '100%',
-                                    height: 'auto',
-                                }}
+                                width={400}
+                                height={1000}
+                                className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${
+                                    loading
+                                        ? 'scale-110 blur-2xl grayscale'
+                                        : 'scale-100 blur-0 grayscale-0'
+                                }}`}
+                                onLoadingComplete={() => setLoading(false)}
                             />
                         </div>
                         <div

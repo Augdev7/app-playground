@@ -1,42 +1,168 @@
 /* eslint-disable react/no-unknown-property */
 'use client';
 
-export default function Footer({
-    reactVersion,
-    nextVersion,
-}: {
-    reactVersion: string;
-    nextVersion: string;
-}) {
+import NavLink from 'next/link';
+import React from 'react';
+import { FaDiscord, FaInstagram, FaYoutube } from 'react-icons/fa';
+
+import styled from 'styled-components';
+
+import { Button } from '../styles/Button';
+
+const Footer = () => {
     return (
-        <div className="col-start-2 col-end-4 mt-28 flex items-center justify-between">
-            <style jsx>
-                {`
-                    .power-by {
-                        color: rgb(82 82 91);
-                        display: inline-flex;
-                        align-items: center;
-                    }
-                    .power-by-text {
-                        margin-right: 0.25rem;
-                    }
-                `}
-            </style>
+        <Wrapper>
+            <section className="contact-short">
+                <div className="grid grid-two-column">
+                    <div>
+                        <h3>Ready to get started?</h3>
+                        <h3>Talk to us today</h3>
+                    </div>
 
-            <span className="power-by">
-                <span className="power-by-text">Powered by</span>
-                <svg height="20" viewBox="0 0 283 64" fill="none">
-                    <path
-                        fill="currentColor"
-                        d="M141.04 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM248.72 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM200.24 34c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9V5h9zM36.95 0L73.9 64H0L36.95 0zm92.38 5l-27.71 48L73.91 5H84.3l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10V51h-9V17h9v9.2c0-5.08 5.91-9.2 13.2-9.2z"
-                    ></path>
-                </svg>
-            </span>
+                    <div className="contact-short-btn">
+                        <NavLink href="/">
+                            <Button>Get Started</Button>
+                        </NavLink>
+                    </div>
+                </div>
+            </section>
 
-            <div className="flex gap-x-6 text-sm text-gray-600">
-                <div>React: {reactVersion}</div>
-                <div>Next: {nextVersion}</div>
-            </div>
-        </div>
+            {/* footer section  */}
+
+            <footer>
+                <div className="container grid grid-four-column">
+                    <div className="footer-about">
+                        <h3>Thapa Technical</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    </div>
+
+                    {/* 2nd column */}
+                    <div className="footer-subscribe">
+                        <h3>Subscribe to get important updates</h3>
+                        <form action="#">
+                            <input type="email" required autoComplete="off" placeholder="Email" />
+                            <input type="submit" value="Subscribe" />
+                        </form>
+                    </div>
+
+                    {/* 3rs column  */}
+                    <div className="footer-social">
+                        <h3>Follows Us</h3>
+                        <div className="footer-social--icons">
+                            <div>
+                                <FaDiscord className="icons" />
+                            </div>
+                            <div>
+                                <FaInstagram className="icons" />
+                            </div>
+                            <div>
+                                <a
+                                    href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <FaYoutube className="icons" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 4th column  */}
+                    <div className="footer-contact">
+                        <h3>Call Us</h3>
+                        <h3>+91 12345678978</h3>
+                    </div>
+                </div>
+
+                {/* bottom section  */}
+                <div className="footer-bottom--section">
+                    <hr />
+                    <div className="container grid grid-two-column">
+                        <p>@{new Date().getFullYear()} ThapaTechnical. All Rights Reserved</p>
+                        <div>
+                            <p>PRIVACY POLICY</p>
+                            <p>TERMS & CONDITIONS</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </Wrapper>
     );
-}
+};
+
+const Wrapper = styled.section`
+    .contact-short {
+        max-width: 60vw;
+        margin: auto;
+        padding: 5rem 10rem;
+        background-color: rgb(249 249 255);
+        border-radius: 1rem;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        transform: translateY(50%);
+    }
+    .contact-short-btn {
+        justify-self: end;
+        align-self: center;
+    }
+
+    footer {
+        padding: 14rem 0 9rem 0;
+        background-color: #0a1435;
+
+        h3 {
+            color: #ffffff;
+            margin-bottom: 2.4rem;
+        }
+        p {
+            color: #fff;
+        }
+        .footer-social--icons {
+            display: flex;
+            gap: 2rem;
+
+            div {
+                padding: 1rem;
+                border-radius: 50%;
+                border: 2px solid #fff;
+
+                .icons {
+                    color: #fff;
+                    font-size: 2.4rem;
+                    position: relative;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .footer-bottom--section {
+            padding-top: 9rem;
+
+            hr {
+                margin-bottom: 2rem;
+                color: #ffffff;
+                height: 0.1px;
+            }
+        }
+    }
+
+    @media (max-width: { mobile: '768px', tab: '998px' }) {
+        .contact-short {
+            max-width: 95vw;
+            padding: 2rem 0rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .contact-short-btn {
+                text-align: center;
+                justify-self: flex-start;
+            }
+        }
+
+        footer .footer-bottom--section {
+            padding-top: 3.2rem;
+        }
+    }
+`;
+
+export default Footer;

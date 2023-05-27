@@ -185,6 +185,24 @@ export default {
                 80: '20rem',
                 96: '24rem',
             },
+            container: {
+                screens: {
+                    sm: '640px',
+                    md: '767px',
+                    lg: '1140px',
+                    xl: '1400px',
+                    '2xl': '1800px',
+                },
+            },
+            screens: {
+                '2xl': { max: '1535px' },
+                // => @media (max-width: 1535px) { ... }
+                // => @media (max-width: 1279px) { ... }
+                // => @media (max-width: 1023px) { ... }
+                // => @media (max-width: 767px) { ... }
+                sm: { max: '639px' },
+                // => @media (max-width: 639px) { ... }
+            },
             animation: {
                 none: 'none',
                 spin: 'spin 1s linear infinite',

@@ -69,7 +69,7 @@ export default function Carrousel() {
                                 >
                                     com nossos serviços de criação de marcas.
                                 </p>
-                                <div className="space-y-4 sm:flex sm:space-x-4 sm:space-y-0 ">
+                                <div className="space-y-4 sm:flex sm:space-x-4 sm:space-y-0">
                                     <Link
                                         data-aos="fade-right"
                                         data-aos-delay="40"

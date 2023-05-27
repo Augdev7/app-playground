@@ -398,6 +398,93 @@ const GlobalStyle = createGlobalStyle`
   ${TransitionStyles};
 
   ${PrismStyles};
+
+  .container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 9rem;
+}
+
+.grid-two-column {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-column {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-column{
+   grid-template-columns: 1fr 1.2fr .5fr .8fr ;
+}
+
+  .common-heading {
+      font-size: 3.8rem;
+      font-weight: 600;
+      margin-bottom: 6rem;
+      text-transform: capitalize;
+    }
+
+    input, textarea{
+    max-width: 50rem;
+    color: var(--green);
+    padding: 1.6rem 2.4rem;
+    border: 1px solid rgba(98, 84, 243, 0.5);
+    text-transform: uppercase;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+    input[type="submit"]{
+    max-width: 16rem;
+    margin-top: 2rem;
+    background-color: rgb(98 84 243);
+    color: #fff;
+    padding: 1.4rem 2.2rem;
+    border-style: solid;
+    border-width: .1rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    cursor: pointer;
+    }
+
+
+/* ===========================================
+/* media queries  
+======================================= */
+/* px  */
+/* rem  */
+/* em  */
+/* 1500px */
+
+//998px
+@media (max-width:{ mobile: "768px", tab: "998px" }) {
+      .container{
+        padding: 0 3.2rem;
+      }
+
+        .grid-three-column {
+      grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:{ mobile: "768px", tab: "998px" }) {
+
+      html{
+        font-size: 50%;
+      }
+
+      .grid{
+        gap: 3.2rem;
+      }
+
+      .grid-two-column, .grid-three-column, .grid-four-column{
+        grid-template-columns: 1fr;
+      }
+}
+
+
 `;
 
 export default GlobalStyle;

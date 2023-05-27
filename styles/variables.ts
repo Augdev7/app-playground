@@ -83,6 +83,7 @@ border-radius: 30px;
     --pink: #543295;
 
     --blue: #57cbff;
+    
 
   --background: '#11172B',
   --backgroundLight: '#1B2138',

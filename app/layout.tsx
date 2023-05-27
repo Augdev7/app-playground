@@ -2,6 +2,7 @@ import '#/styles/globals.css';
 import { Metadata } from 'next';
 
 import GlobalStyle from './../styles/GlobalStyle';
+import Byline from './../ui/byline';
 import Navbar from './../ui/Components/Navbar/Navbar';
 import PopUpButton from './../ui/Components/PopUpButton/PopUpButton';
 import StyledComponentsRegistry from './styling/styled-components/registry';
@@ -70,6 +71,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         </div>
                     </div>
                     <PopUpButton handleScroll={undefined} />
+                    <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">
+                        <div className="rounded-lg bg-black/30 backdrop-blur-xl">
+                            <Byline />
+                        </div>
+                    </div>
                 </div>
             </body>
         </html>

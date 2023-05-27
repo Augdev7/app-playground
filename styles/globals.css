@@ -37,17 +37,45 @@
 }
 
 @layer utilities {
-  /* This two helpers apply a -50% to the translate x/y, and add
-   * a --y/--x css variable to it. This util is only here to make writing this class
-   * a bit easier to read in the HTML :)   */
-  .translate-y-centered-offset {
-    @apply translate-y-[calc(-50%_+_var(--y))];
+  .pushable {
+    background: hsl(208deg 100% 32%);
+    border-radius: 25px;
+    border: none;
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Inter";
+    padding: 0px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    outline-offset: 2px;
   }
-  .translate-x-centered-offset {
-    @apply translate-x-[calc(-50%_+_var(--x))];
+  .front {
+    display: block;
+    padding: 18px 20px;
+    border-radius: 25px;
+    font-size: 1.15rem;
+    background: #4169e1;
+    color: white;
+    font-family: "Inter";
+    transform: translateY(-6px);
   }
-  
-  
+  .front2 {
+    display: block;
+    padding: 18px 20px;
+    border-radius: 25px;
+    font-size: 1.15rem;
+    background: hsl(202 99% 38%);
+    color: white;
+    font-family: "Inter";
+    transform: translateY(-6px);
+  }
+  .pushable:active .front {
+    transform: translateY(-2px);
+  }
+  .transform {
+    transform: translateY(-200px);
+  }
 
   .header {
     animation: bounce 4s linear infinite;
@@ -75,7 +103,6 @@
       transform: translateY(-6px);
     }
   }
-  
 }
 
 .code-editor code[class*="language-"],
@@ -274,6 +301,47 @@ table tbody tr td code {
   color: rgba(255, 255, 255, 0.25);
 }
 
+.custom-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-button:hover {
+  background-color: #3e8e41;
+}
+
+.custom-button:active {
+  background-color: #367c39;
+}
+
+.custom-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.custom-button--primary {
+  background-color: #fab702;
+}
+
+.custom-button--secondary {
+  background-color: #f44336;
+}
+
+.custom-button--tertiary {
+  background-color: #ffc107;
+}
+
+.shadow {
+  box-shadow: 2px 2px 10px #00000070;
+}
 
 .hash-span {
   margin-top: -100px;

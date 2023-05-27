@@ -6,59 +6,55 @@ import Title from './title';
 
 const Portifolio = () => {
     return (
-        <section id="projects" className="w-full border-b-[1px] border-b-black py-20">
-            <div className="flex items-center justify-center text-center">
-                <Title title="VISIT MY PORTFOLIO AND KEEP YOUR FEEDBACK" des="My Projects" />
-            </div>
+        <section id="projects" className="w-full border-b-[1px] border-b-black py-20 bg-slate-100">
+            <div className="min-h-screen max-w-7xl mx-auto px-8 xl:px-0 mt-24">
+                <div className="flex items-left justify-left text-left">
+                    <Title title="O QUE FAZEMOS" des="Nossas Soluções" />
+                </div>
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-14">
-                <ProjectsCard
-                    title="SOCIAL MEDIA CLONE"
-                    des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-14">
+                    <ProjectsCard
+                        title="CRIAÇÃO DE CONTEÚDO"
+                        des=" Seja para campanhas on ou off, mantemos o nivel de qualidade e criatividade que sua empresa deseja."
+                        src={projectOne}
+                    />
 
-              Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!"
-                    src={projectOne}
-                />
+                    <ProjectsCard
+                        title="DESIGN GRÁFICO"
+                        des=" Vamos do branding à criação de sites e plataformas para estabelecer o visual de sua marca!"
+                        src={projectTwo}
+                    />
 
-                <ProjectsCard
-                    title="E-commerce Website"
-                    des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    <ProjectsCard
+                        title="PLANEJAMENTO"
+                        des=" Definimos estratégias de cruto, médio e longo prazo para você nunca perder seu negócio de vista!"
+                        src={projectThree}
+                    />
 
-              Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!"
-                    src={projectTwo}
-                />
-
-                <ProjectsCard
-                    title="Chatting App"
-                    des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-
-              Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!"
-                    src={projectThree}
-                />
-
-                <ProjectsCard
-                    title="SOCIAL MEDIA CLONE"
-                    des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    <ProjectsCard
+                        title="SOCIAL MEDIA CLONE"
+                        des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 
               Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!"
-                    src={projectThree}
-                />
+                        src={projectThree}
+                    />
 
-                <ProjectsCard
-                    title="E-commerce Website"
-                    des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-
-              Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!"
-                    src={projectOne}
-                />
-
-                <ProjectsCard
-                    title="Chatting App"
-                    des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    <ProjectsCard
+                        title="E-commerce Website"
+                        des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 
               Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!"
-                    src={projectTwo}
-                />
+                        src={projectOne}
+                    />
+
+                    <ProjectsCard
+                        title="Chatting App"
+                        des=" Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+
+              Explicabo quibusdam voluptate sapiente voluptatibus harum quidem!"
+                        src={projectTwo}
+                    />
+                </div>
             </div>
         </section>
     );
