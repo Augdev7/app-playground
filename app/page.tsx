@@ -14,8 +14,6 @@ import { HomeHero } from './../ui/Components/HomeHero/index';
 import { SectionSobre } from './../ui/Components/SectionSobre/index';
 import Contact from './../ui/Components/Contact/contact';
 import { Experiencia } from './../ui/Components/Experiencia/index';
-import TabsComponent from './../ui/TabsComponent';
-import { CardCategoria } from '../ui/Components/CardCategoria/index';
 import Portifolio from './../ui/Components/Portifolio/Projects';
 
 export default function Page() {
@@ -27,7 +25,6 @@ export default function Page() {
             <HomeHero />
             <Portifolio />
             <Carrousel />
-            <TabsComponent />
             <Experiencia />
             <SectionSobre />
             <Contact />
