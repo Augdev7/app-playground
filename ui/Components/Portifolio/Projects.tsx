@@ -2,14 +2,18 @@ import React from 'react';
 
 import { projectOne, projectTwo, projectThree } from './index';
 import ProjectsCard from './ProjectsCard';
-import Title from './title';
 
 const Portifolio = () => {
     return (
         <section id="projects" className="w-full border-b-[1px] border-b-black py-20 bg-slate-100">
             <div className="min-h-screen max-w-7xl mx-auto px-8 xl:px-0 mt-24">
                 <div className="flex items-left justify-left text-left">
-                    <Title title="O QUE FAZEMOS" des="Nossas Soluções" />
+                    <h3 className="text-designColor mb-[-8px] text-sm font-bold uppercase tracking-wide">
+                        O QUE FAZEMOS
+                    </h3>
+                    <h1 className="text-4xl font-extrabold capitalize text-gray-700 md:text-4xl">
+                        Nossas Soluções
+                    </h1>
                 </div>
 
                 <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-14">

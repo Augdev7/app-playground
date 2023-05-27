@@ -9,8 +9,6 @@ import { demos, type Item } from '#/lib/demos';
 import { NextLogo } from '#/ui/next-logo';
 import clsx from 'clsx';
 
-import Byline from './byline';
-
 export function GlobalNav() {
     const [isOpen, setIsOpen] = useState(false);
     const close = () => setIsOpen(false);
@@ -64,7 +62,6 @@ export function GlobalNav() {
                         );
                     })}
                 </nav>
-                <Byline className="absolute hidden sm:block" />
             </div>
         </div>
     );
