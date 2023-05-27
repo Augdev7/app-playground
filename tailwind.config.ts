@@ -307,7 +307,6 @@ export default {
                 150: '1.5',
                 200: '2',
             },
-            container: {},
             content: {
                 none: 'none',
             },
