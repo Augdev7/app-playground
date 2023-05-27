@@ -2,9 +2,9 @@ import '#/styles/globals.css';
 import { Metadata } from 'next';
 
 import GlobalStyle from './../styles/GlobalStyle';
+import { AddressBar } from './../ui/address-bar';
 import Byline from './../ui/byline';
 import Navbar from './../ui/Components/Navbar/Navbar';
-import PopUpButton from './../ui/Components/PopUpButton/PopUpButton';
 import StyledComponentsRegistry from './styling/styled-components/registry';
 
 export const metadata: Metadata = {
@@ -59,21 +59,26 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="PT-BR" className="[color-scheme:dark]">
-            <body className="bg-slate-900 pb-36">
-                <div className="bg-gray-5 justify-center overflow-hidden">
-                    <Navbar />
-                </div>
+            <body className="overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')]">
                 <div className="">
-                    <div className="bg-vc-border-gradient p-px shadow-lg shadow-black/20">
-                        <div className=" bg-black/30 p-3.5 backdrop-blur-sm lg:p-6">
-                            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-                            <GlobalStyle />
+                    <div className="mx-auto max-w-full space-y-24 px-2 pt-20 lg:py-8 lg:px-8">
+                        <Navbar />
+
+                        <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">
+                            <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">
+                                <div className="rounded-lg bg-black">
+                                    <AddressBar />
+                                </div>
+                            </div>
+                            <div className="rounded-lg bg-black/30 p-3.5 backdrop-blur-sm lg:p-6">
+                                <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+                                <GlobalStyle />
+                            </div>
                         </div>
-                    </div>
-                    <PopUpButton handleScroll={undefined} />
-                    <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">
-                        <div className="rounded-lg bg-black/30 backdrop-blur-xl">
-                            <Byline />
+                        <div className="rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20">
+                            <div className="rounded-lg bg-black/30 backdrop-blur-xl">
+                                <Byline />
+                            </div>
                         </div>
                     </div>
                 </div>

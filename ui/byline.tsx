@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { VercelLogo } from '#/ui/vercellogo';
+import { VercelLogo } from './VercelLogo';
 
 export default function Byline() {
     return (

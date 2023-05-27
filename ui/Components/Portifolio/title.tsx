@@ -1,5 +1,3 @@
-import CustomButton from './CustomButton';
-
 const Title = ({ title, des }) => {
     return (
         <div className="font-titleFont mb-8 flex flex-col gap-4">
