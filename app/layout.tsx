@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import GlobalStyle from './../styles/GlobalStyle';
 import { AddressBar } from './../ui/address-bar';
 import Byline from './../ui/byline';
-import Navbar from './../ui/Components/Navbar1/Navbar';
+import Navbar from './../ui/Components/navbar1/Navbar';
 import StyledComponentsRegistry from './styling/styled-components/registry';
 
 export const metadata: Metadata = {
