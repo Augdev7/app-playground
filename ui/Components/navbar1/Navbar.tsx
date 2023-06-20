@@ -4,7 +4,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import { GrFormClose } from 'react-icons/gr';
 import { RxHamburgerMenu } from 'react-icons/rx';
