@@ -30,6 +30,7 @@ const Navbar = () => {
     const [menuState, setMenuState] = useState(false);
     const [searchState, setSeachState] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const close = () => setIsOpen(false);
 
     const handleMenuEvent = () => {
         setMenuState(!menuState);
@@ -68,17 +69,9 @@ const Navbar = () => {
         <div className="bg-[#1E1E1E]/90 sm:fixed top-0 z-20 w-[100%] flex h-28 items-center justify-between px-2 shadow-2xl backdrop-blur-sm lg:px-5">
             {/* section 1 starts */}
             <div className="flex gap-2 lg:gap-3">
-                <div className="flex h-14 items-center px-8 py-4 lg:h-auto">
-                    <Link
-                        href="/"
-                        className="group flex w-full items-center gap-x-2.5"
-                        aria-label="Read more about Seminole tax hike"
-                    >
-                        <div className="w-58 h-10 rounded-full border border-white/30 group-hover:border-white/50">
-                            <Logo />
-                        </div>
-                    </Link>
-                </div>
+                <Link href="/" className="group flex w-full items-center gap-x-2.5" onClick={close}>
+                    <Image src={Logo} alt="Logo up.expert" />
+                </Link>
                 <div
                     onClick={() => {
                         hamState && setHamState(false);

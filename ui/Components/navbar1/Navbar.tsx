@@ -24,7 +24,6 @@ export default function Navbar1() {
     const containerRef = useRef(null);
     const [isOpen, toggleOpen] = useCycle(false, true);
     const router = useRouter();
-    const close = () => setIsOpen(false);
 
     return (
         <header
@@ -48,7 +47,7 @@ export default function Navbar1() {
                         <Link
                             href="/"
                             className="group flex w-full items-center gap-x-2.5"
-                            onClick={close}
+                            aria-label="Read more about Seminole tax hike"
                         >
                             <Image src={Logo} alt="Logo up.expert" />
                         </Link>
