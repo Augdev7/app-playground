@@ -217,7 +217,7 @@ const GlobalStyle = createGlobalStyle`
 
   }
 
-  .button {
+  button {
   background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.36%);
   box-shadow: 0px 20px 24px 3px rgba(251, 161, 40, 0.42);
   border-radius: 34px;
@@ -317,7 +317,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--fz-md);
   }
 
-  .skip-to-content {
+  skip-to-content {
     position: absolute;
     top: auto;
     left: -999px;

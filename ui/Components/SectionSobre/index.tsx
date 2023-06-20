@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/no-unknown-property */
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import { useEffect, useState } from 'react';
+
+import { motion } from 'framer-motion';
 
 import Bg from '/public/banner1.webp';
 
@@ -11,27 +13,95 @@ import { AnimatedText } from '../../AnimatedText/index';
 import { Container } from './styles';
 
 export function SectionSobre() {
+    const [mousePosition, setMousePosition] = useState({
+        x: 0,
+        y: 0,
+    });
+    const [cursorVariant, setCursorVariant] = useState('default');
+
+    useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const mouseMove = (e: any) => {
+            setMousePosition({
+                x: e.clientX,
+                y: e.clientY,
+            });
+        };
+
+        window.addEventListener('mousemove', mouseMove);
+
+        return () => {
+            window.removeEventListener('mousemove', mouseMove);
+        };
+    }, []);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const variant: any = {
+        default: {
+            x: mousePosition.x - 16,
+            y: mousePosition.y - 16,
+        },
+        text: {
+            height: 150,
+            width: 150,
+            x: mousePosition.x - 75,
+            y: mousePosition.y - 75,
+            backgroundColor: 'rgb(244, 244, 244)',
+            mixBlendMode: 'difference',
+        },
+        textwhite: {
+            height: 150,
+            width: 150,
+            x: mousePosition.x - 75,
+            y: mousePosition.y - 75,
+            backgroundColor: 'rgb(255, 255, 255)',
+            mixBlendMode: 'difference',
+        },
+    };
+
+    const textEnter = () => setCursorVariant('text');
+    const textLeave = () => setCursorVariant('default');
+
     return (
         <Container>
-            <div id="about">
-                <div className="min-h-screen flex py-10 md:flex-row flex-col items-center bg-[url('/bg-sobre.svg')] text-dark sm:items-start">
-                    <div className="max-w-8xl mx-auto px-6 lg:px-8">
-                        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-                            <div className="bg-light z-0 inline-block p-6 !pt-0 dark:bg-dark sm:p-4 sm:!pt-16 md:p-12 md:!pt-16 lg:p-16 xl:p-4">
-                                <Image src={Bg} alt="codeBucka" className="h-auto" />
-                            </div>
-                            <div className="gap z-0 grid grid-flow-col flex-col items-center self-center p-32 !pt-0 sm:grid-cols-1 sm:p-8 sm:!pt-16 md:p-12 md:!pt-16 lg:w-full lg:p-16 lg:pt-2 lg:text-center">
-                                <AnimatedText text="SOBRE NÓS" />
-                                <p className="my-4 text-base font-medium">
+            <section
+                id="about"
+                className="dark:text-light text-dark flex min-h-screen items-center bg-[url('/bg-sobre.svg')] sm:items-start"
+            >
+                <div className="max-w-8xl grid w-full items-center gap-4 md:grid-cols-2 md:gap-8">
+                    <div className="w-full">
+                        <Image
+                            src={Bg}
+                            alt="codeBucka"
+                            className="h-auto"
+                            placeholder="blur"
+                            width={700}
+                            height={475}
+                            sizes="100vw"
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                            }}
+                        />
+                    </div>
+                    <div className="relative isolate mx-auto flex max-w-2xl flex-row px-6 py-32 pt-14 sm:mb-8 sm:flex sm:justify-center sm:py-24 lg:px-8 lg:py-56">
+                        <div className="grid gap-6">
+                            <AnimatedText text="SOBRE NÓS" />
+                            <div className="text-center">
+                                <p className="mt-6 px-4 text-lg leading-8 text-gray-600">
                                     Somos uma Agência de Marketing Digital Full Service com uma
                                     combinação única de talentos criados para a era digital. Geramos
                                     ideias e estratégias impulsionadas pela percepção do consumidor
                                     e ampliadas por um domínio sem precedentes da tecnologia.
                                 </p>
-                                <div className="col-start-1 row-start-3 mt-4 self-center sm:col-start-2 sm:row-span-2 sm:row-start-2 sm:mt-0 lg:col-start-1 lg:row-start-3 lg:row-end-4 lg:mt-6">
+                            </div>
+                            <div className="flex flex-row sm:mb-8 sm:flex sm:justify-center">
+                                <div className="relative rounded-full px-8 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                                    Qual seu sonho e objetivo?{' '}
                                     <Link href="https://api.whatsapp.com/send?phone=5561986692775">
                                         <button className="button i-button">
-                                            Entrar em contato
+                                            <span className="absolute inset-0" aria-hidden="true" />
+                                            CONTA PRA GENTE <span aria-hidden="true">&rarr;</span>
                                         </button>
                                     </Link>
                                 </div>
@@ -39,7 +109,7 @@ export function SectionSobre() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </Container>
     );
 }

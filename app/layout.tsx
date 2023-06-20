@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 import GlobalStyle from './../styles/GlobalStyle';
 import { AddressBar } from './../ui/address-bar';
 import Byline from './../ui/byline';
-import Navbar from './../ui/Components/Navbar/Navbar';
+import Navbar from './../ui/Components/Navbar1/Navbar';
 import StyledComponentsRegistry from './styling/styled-components/registry';
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="PT-BR" className="[color-scheme:dark]">
+        <html suppressHydrationWarning lang="PT-BR">
             <body className="overflow-y-scroll bg-gray-1100 bg-[url('/grid.svg')]">
                 <div className="">
                     <div className="mx-auto max-w-full space-y-24 px-2 pt-20 lg:py-8 lg:px-8">

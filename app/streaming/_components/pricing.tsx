@@ -67,7 +67,6 @@ export function Pricing({ product, cartCount }: { product: Product; cartCount: s
             </div>
 
             <Suspense fallback={<LoadingDots />}>
-                {/* @ts-expect-error Async Server Component */}
                 <UserSpecificDetails productId={product.id} />
             </Suspense>
 
