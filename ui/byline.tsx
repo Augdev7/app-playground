@@ -1,46 +1,40 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react/react-in-jsx-scope */
-import Link from 'next/link';
+import { VercelLogo } from '#/ui/vercel-logo';
 
-import { VercelLogo } from './VercelLogo';
-import { BsWhatsapp } from 'react-icons/bs';
-
-export default function Byline() {
-    return (
-        <div className="flex items-center justify-between gap-x-4 p-3.5 lg:px-5 lg:py-3">
-            <div className="flex items-center gap-x-1.5">
-                <div className="w-96 text-gray-100 hover:text-gray-50">
-                <h4>
-              <BsWhatsapp size={22} color='#00fffb' /> WhatsApp{' '}
-            </h4>
-            <Link
-              href='https://api.whatsapp.com/send?phone=5561986692775'
-              target='_blank'
-            >
-              <span>+55 61 98669-2775</span>
-            </Link>
-                    </div>
+export default function Byline({ className }: { className: string }) {
+  return (
+    <div
+      className={`${className} inset-x-0 bottom-3 mx-3 rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/20`}
+    >
+      <div className="flex flex-col justify-between space-y-2 rounded-lg bg-black p-3.5 lg:px-5 lg:py-3">
+        <div className="flex items-center gap-x-1.5">
+          <div className="text-sm text-gray-400">By</div>
+          <a href="https://vercel.com" title="Vercel">
+            <div className="w-16 text-gray-100 hover:text-gray-50">
+              <VercelLogo />
             </div>
-
-            <div className="text-sm text-gray-400">
-                <Link
-                    className="text-orange-500 hover:text-gray-400"
-                    href="https://upexpert.com.br"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    © {new Date().getFullYear()} Agência full service{' '}
-                </Link>
-                {'  '}
-                <Link
-                    className="underline decoration-dotted underline-offset-4 hover:text-gray-400"
-                    href="https://upexpert.com.br/design"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                   <span className='text-amber-300'>UP.EXPERT</span>
-                </Link>
-            </div>
+          </a>
         </div>
-    );
+
+        <div className="text-sm text-gray-400">
+          <a
+            className="underline decoration-dotted underline-offset-4 transition-colors hover:text-gray-300"
+            href="https://github.com/vercel/app-playground"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View code
+          </a>
+          {' or '}
+          <a
+            className="underline decoration-dotted underline-offset-4 transition-colors hover:text-gray-300"
+            href="https://vercel.com/templates/next.js/app-directory"
+            target="_blank"
+            rel="noreferrer"
+          >
+            deploy your own
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }

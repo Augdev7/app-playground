@@ -1,4 +1,6 @@
-import { demos } from '#/lib/demos';
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable import-helpers/order-imports */
+'use client';
 import Link from 'next/link';
 import { Hero } from '#/components/Hero/index';
 import { CardContact } from '#/components/CardContact/index';

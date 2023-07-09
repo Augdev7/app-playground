@@ -1,5 +1,9 @@
-import colors from 'tailwindcss/colors';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
+
+const withMT = require('@material-tailwind/react/utils/withMT');
 
 const withMT = require('@material-tailwind/react/utils/withMT');
 

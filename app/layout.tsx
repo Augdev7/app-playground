@@ -1,8 +1,5 @@
 /* eslint-disable react/react-in-jsx-scope */
 import '#/styles/globals.css';
-import { AddressBar } from '#/ui/address-bar';
-import Byline from '#/ui/byline';
-import { GlobalNav } from '#/ui/global-nav';
 import { Metadata } from 'next';
 import Pwa from './Pwa';
 import { siteConfig } from '#/config';
@@ -10,6 +7,12 @@ import StyledComponentsRegistry from './styling/styled-components/registry';
 import GlobalStyle from './../styles/GlobalStyle';
 import Footer from './../ui/footer';
 import { Toaster } from '#/components/toaster';
+
+import GlobalStyle from './../styles/GlobalStyle';
+import { AddressBar } from './../ui/address-bar';
+import Byline from './../ui/byline';
+import Navbar from './../ui/Components/navbar1/Navbar';
+import StyledComponentsRegistry from './styling/styled-components/registry';
 
 export const metadata: Metadata = {
   title: {
