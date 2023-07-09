@@ -1,11 +1,12 @@
 import { demos } from '#/lib/demos';
 import Link from 'next/link';
+import { Hero } from '#/components/Hero/index';
+import { CardContact } from '#/components/CardContact/index';
 
 export default function Page() {
   return (
     <div className="space-y-8">
-      <h1 className="text-xl font-medium text-gray-300">Examples</h1>
-
+      <Hero />
       <div className="space-y-10 text-white">
         {demos.map((section) => {
           return (
@@ -39,6 +40,8 @@ export default function Page() {
           );
         })}
       </div>
+      <CardContact />
     </div>
+    
   );
 }
